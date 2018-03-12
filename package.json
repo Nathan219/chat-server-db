@@ -1,0 +1,27 @@
+{
+  "name": "db-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "migrate:latest": "node node_modules/knex/bin/cli.js migrate:latest",
+    "migrate:rollback": "node node_modules/knex/bin/cli.js migrate:rollback",
+    "run": "node src/index.js",
+    "start": "npm migrate:latest && npm run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "101": "^1.6.2",
+    "bluebird": "^3.5.1",
+    "bookshelf": "^0.12.1",
+    "error-cat": "^3.0.0",
+    "express": "^4.16.2",
+    "joi": "^9.0.4",
+    "knex": "^0.14.4",
+    "pg": "^7.4.1",
+    "ponos": "^5.8.3",
+    "socket.io": "^2.0.4"
+  }
+}
