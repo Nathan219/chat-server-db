@@ -16,7 +16,7 @@ module.exports.task = function userConnected (job) {
     .then(messages => {
       return RabbitMQ.publishEvent('messages.requested', {
         socketId: job.socketId,
-        messages
+        messages: messages.reverse()
       })
     });
 };
