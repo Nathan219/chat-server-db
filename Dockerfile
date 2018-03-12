@@ -5,6 +5,4 @@ WORKDIR /chat-server
 
 RUN npm install
 
-EXPOSE 5000
-
-CMD npm start
+CMD sleep 10; npm run start:production

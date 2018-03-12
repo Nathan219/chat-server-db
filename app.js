@@ -7,8 +7,8 @@ const socket = require('./util/socket-server');
 
 const server = require('./workers/server');
 
-return rabbitmq.connect()
-  .then(() => server.start())
+return server.start()
+  .then(() => rabbitmq.connect())
   .then(() => socket.connect())
   .then(() => console.info('Everything Started'))
   .catch(err => {

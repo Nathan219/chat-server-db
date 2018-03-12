@@ -1,13 +1,14 @@
 {
-  "name": "db-service",
+  "name": "message-store",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "migrate:latest": "node node_modules/knex/bin/cli.js migrate:latest",
     "migrate:rollback": "node node_modules/knex/bin/cli.js migrate:rollback",
-    "run": "node src/index.js",
-    "start": "npm migrate:latest && npm run"
+    "server": "node src/index.js",
+    "start": "npm run migrate:latest && npm run server",
+    "start:production": "NODE_ENV=production && npm start"
   },
   "keywords": [],
   "author": "",

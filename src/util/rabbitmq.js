@@ -15,6 +15,10 @@ class RabbitMQ extends RabbitMQClient {
         name: 'message.received'
       }, {
         name: 'messages.requested'
+      }, {
+        name: 'message.sent'
+      }, {
+        name: 'user.connected'
       }]
     })
   }
