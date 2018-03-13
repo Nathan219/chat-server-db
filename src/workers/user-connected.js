@@ -11,12 +11,11 @@ module.exports.jobSchema = Joi.object({
 
 
 module.exports.task = function userConnected (job) {
-  console.log(job);
   return Messages.fetchRecent(20)
     .then(messages => {
       return RabbitMQ.publishEvent('messages.requested', {
         socketId: job.socketId,
-        messages: messages.reverse()
+        messages: messages
       })
     });
 };

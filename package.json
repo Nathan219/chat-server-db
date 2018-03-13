@@ -8,7 +8,8 @@
     "migrate:rollback": "node node_modules/knex/bin/cli.js migrate:rollback",
     "server": "node src/index.js",
     "start": "npm run migrate:latest && npm run server",
-    "start:production": "NODE_ENV=production && npm start"
+    "start:production": "NODE_ENV=production && npm start",
+    "test": "NODE_ENV=test mocha ./test/*"
   },
   "keywords": [],
   "author": "",
@@ -16,13 +17,15 @@
   "dependencies": {
     "101": "^1.6.2",
     "bluebird": "^3.5.1",
-    "bookshelf": "^0.12.1",
     "error-cat": "^3.0.0",
     "express": "^4.16.2",
     "joi": "^9.0.4",
     "knex": "^0.14.4",
     "pg": "^7.4.1",
-    "ponos": "^5.8.3",
-    "socket.io": "^2.0.4"
+    "ponos": "^5.8.3"
+  },
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^5.0.4"
   }
 }

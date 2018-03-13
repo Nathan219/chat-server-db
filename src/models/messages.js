@@ -22,7 +22,10 @@ class Messages {
       author,
       message
     };
-    return Promise.resolve(knex('messages').insert(newMessage))
+    return Promise.resolve(
+      knex('messages')
+        .insert(newMessage)
+    )
       .return(newMessage);
   }
 
@@ -37,7 +40,13 @@ class Messages {
    *           {String}   message.text      - the text that the user sent
    */
   static fetchRecent (count) {
-    return Promise.resolve(knex('messages').select('author', 'message', 'created').orderBy('id', 'desc').limit(count));
+    return Promise.resolve(
+      knex('messages')
+        .select('author', 'message', 'created')
+        .orderBy('id', 'desc')
+        .limit(count)
+    )
+      .then(messages => messages.reverse());
   }
 }
 
