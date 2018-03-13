@@ -8,7 +8,7 @@
     "migrate:rollback": "node node_modules/knex/bin/cli.js migrate:rollback",
     "server": "node src/index.js",
     "start": "npm run migrate:latest && npm run server",
-    "start:production": "NODE_ENV=production && npm start",
+    "start:production": "NODE_ENV=production npm start",
     "test": "NODE_ENV=test mocha ./test/*"
   },
   "keywords": [],
